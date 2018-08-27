@@ -5,7 +5,6 @@ import tools from './tools'
 
 
 export default {
-    version : '1.0.0' ,
     calc , 
     date , 
     form , 
