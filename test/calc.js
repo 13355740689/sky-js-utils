@@ -15,3 +15,7 @@ test('test mul func ', () => {
 test('test div func ', () => {
     expect(calc.div(3 , 2)).toBe(1.5);
 })
+
+test('test numToThousands func ', () => {
+    expect(calc.numToThousands(9999999.99)).toBe('9,999,999.99');
+})

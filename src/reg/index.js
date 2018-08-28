@@ -16,16 +16,29 @@ const validateUrl = url => {
     return reg.test(url)
 }
 
-// 校验字母
+// 字母校验
 const validateChar = chars => {
     const reg = /^[A-Za-z]+$/
     return reg.test(chars)
 }
 
+// 图片文件格式校验
+const validateImgFile = fileName => {
+    const reg = /(gif|jpg|jpeg|png|GIF|JPG|PNG)$/ig
+    return reg.test(fileName)
+}
+
+// 视频文件格式校验
+const validateMediaFile = fileName => {
+    const reg = /(mp4|mp3|flv|wav)$/ig
+    return reg.test(fileName)
+}
 
 export default {
     validateMail , 
     validatePhone ,
     validateUrl ,
-    validateChar
+    validateChar ,
+    validateImgFile ,
+    validateMediaFile
 } 

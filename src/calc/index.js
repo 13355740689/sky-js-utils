@@ -71,8 +71,31 @@ const div = (arg1, arg2) => {
     return (r1 / r2) * Math.pow(10, t2 - t1)
 }
 
+/**
+ * 数字千分位处理，如999999.99转换为'999,999.99'
+ * @param {Number} num 
+ */
+const numToThousands = num =>{
+    let retNum
+    if (typeof (num) === 'undefined' || !num || num === null || num === undefined || isNaN(num)) {
+        retNum = '0.00'
+    } else {
+        let numStr = num.toString()
+        let reg = /(\d)(?=(\d{3})+(?!\d))/g
+        // 数字不带小数点
+        if(/^-?\d+$/.test(numStr)){
+            retNum = numStr.replace(reg , '$1,') + '.00'
+        }else{  //数字带小数点
+            let numarray = numStr.split('.')
+            let numbefore = numarray[0].replace(reg , '$1,')
+            let minNum = numarray[1].length > 1 ? numarray[1].substr(0, 2) : numarray[1] + '0'
+            retNum = numbefore + '.' + minNum
+        }
+    }
+    return retNum
+}
 
 
 export default {
-    add, sub, mul, div
+    add, sub, mul, div , numToThousands
 }

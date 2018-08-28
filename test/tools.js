@@ -8,3 +8,7 @@ test('test isObject func ', () => {
 test('test extend func ', () => {
     expect(tools.extend({a : 1})).toHaveProperty('a' , 1);
 })
+
+test('test trim func ', () => {
+    expect(tools.trim(' a  b  ')).toBe('a  b');
+})

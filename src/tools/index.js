@@ -29,6 +29,25 @@ function extend(obj) {
     return obj
 }
 
+// 去字符串头尾空格
+const trim = str => {
+    return str.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+// 是否在微信浏览器中
+const isInWx = () =>{
+    const reg = /MicroMessenger/i
+    const ua = window.navigator.userAgent.toLowerCase()
+    return ua.match(reg) == 'micromessenger'
+}
+
+// 是否在支付宝浏览器中
+const isInAli = () =>{
+    const reg = /AlipayClient/
+    const ua = window.navigator.userAgent
+    return reg.test(ua)
+}
+
 export default {
-    isObject , extend
+    isObject , extend , trim , isInWx , isInAli
 }
