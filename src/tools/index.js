@@ -4,6 +4,11 @@ let typeOf = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol'
     return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj
 }
 
+// 为空校验(包含null、0、'')
+const isNull = str => {
+    return !!!str
+}
+
 // 是否是对象
 const isObject = obj => {
     return (typeof obj === 'undefined' ? 'undefined' : typeOf(obj)) === 'object' && obj !== null
@@ -49,5 +54,5 @@ const isInAli = () =>{
 }
 
 export default {
-    isObject , extend , trim , isInWx , isInAli
+    isNull , isObject , extend , trim , isInWx , isInAli
 }

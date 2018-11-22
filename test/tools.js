@@ -1,5 +1,8 @@
 import tools from '../src/tools'
 
+test('test isNull func ', () => {
+    expect(tools.isNull('')).toBeTruthy();
+})
 
 test('test isObject func ', () => {
     expect(tools.isObject({})).toBeTruthy();
